@@ -1,0 +1,123 @@
+KASRAPI – APLIKASI LAPORAN KEUANGAN UMKM (VERSI 2)
+==================================================
+
+YANG BARU DI VERSI 2
+--------------------
+1. Laporan bisa diklik sampai ke sumbernya
+   Setiap baris di laba rugi, neraca, arus kas, dan perubahan modal bisa
+   diketuk. Contoh: Laba ditahan di neraca dirinci per bulan, lalu per
+   kategori pendapatan dan biaya, lalu sampai ke daftar transaksinya.
+   Transaksi bisa langsung dibuka dan diubah. Angka di Beranda, jurnal,
+   dan buku besar juga bisa diketuk.
+
+2. Stok per barang dan HPP otomatis (menu Kelola > Barang & jasa)
+   Daftarkan barang beserta harga jual, stok awal, dan harga belinya.
+   Saat mencatat penjualan, pilih barang dan jumlahnya: modal barang
+   (HPP) dihitung dari harga beli rata-rata dan stok berkurang otomatis.
+   Setiap barang punya kartu stok dan tanda "Menipis" atau "Habis".
+   Jasa tanpa stok (misalnya cuci kiloan) juga bisa didaftarkan.
+
+3. Nota, faktur, dan kwitansi
+   Nomor nota otomatis. Nota bisa dikirim ke WhatsApp pelanggan, disalin
+   sebagai teks, atau diunduh lalu dicetak atau disimpan sebagai PDF.
+   Atur alamat, nomor telepon, info rekening, dan catatan kaki nota di
+   Pengaturan > Profil usaha dan Nota dan tagihan.
+
+4. Piutang dan utang per pelanggan atau pemasok (Kelola > Piutang & utang)
+   Isi nama pelanggan atau pemasok saat transaksi "belum dibayar". Ada
+   jatuh tempo, umur piutang, tombol "Tagih via WhatsApp", dan tombol
+   "Catat pembayaran". Pembayaran memotong tagihan paling lama lebih dulu.
+   Piutang dari versi lama tetap ada, tercatat sebagai "Tanpa nama".
+
+5. Anggaran dan transaksi rutin (Kelola > Anggaran, Kelola > Transaksi rutin)
+   Target omzet dan batas biaya per kategori setiap bulan. Sewa, gaji,
+   cicilan, dan penyusutan bisa dijadwalkan tiap bulan lalu dicatat
+   dengan sekali ketuk. Centang "Ulangi tiap bulan" saat mencatat
+   transaksi untuk membuat jadwalnya.
+
+6. Panel "Perlu perhatian" di Beranda
+   Mengingatkan piutang lewat jatuh tempo, utang yang segera jatuh tempo,
+   stok menipis, anggaran yang terlewati, dan transaksi rutin yang belum
+   dicatat.
+
+Data dari versi 1 tetap terbaca. Untuk mencoba semua fitur baru tanpa
+mengganggu data asli, pilih Pengaturan > Tambah contoh toko kosmetik.
+
+
+Isi folder
+- index.html            : aplikasinya (satu file)
+- manifest.webmanifest  : identitas aplikasi (nama, ikon, warna)
+- sw.js                 : agar aplikasi tetap bisa dibuka tanpa internet
+- icons/                : ikon aplikasi
+
+Semua file harus tetap berada dalam satu folder seperti ini.
+
+
+CARA 1 (DISARANKAN): PASANG SEBAGAI APLIKASI DI HP DAN LAPTOP
+---------------------------------------------------------------
+Aplikasi perlu "rumah" di internet sekali saja, setelah itu bisa dipasang
+di perangkat mana pun dan tetap jalan tanpa internet. Contoh gratis memakai
+GitHub Pages:
+
+1. Buat akun di github.com, lalu buat repository baru, misalnya "kasrapi".
+   Pilih Public.
+2. Di repository itu pilih "Add file" > "Upload files", lalu tarik SEMUA
+   isi folder ini (index.html, manifest.webmanifest, sw.js, folder icons).
+   Klik "Commit changes".
+3. Buka Settings > Pages. Pada "Build and deployment", pilih
+   "Deploy from a branch", branch "main", folder "/ (root)", lalu Save.
+4. Tunggu 1-2 menit. Alamat aplikasi menjadi:
+   https://NAMA-AKUN-ANDA.github.io/kasrapi/
+5. Pasang di perangkat:
+   - Android (Chrome)  : buka alamat itu > menu titik tiga >
+                         "Instal aplikasi" / "Tambahkan ke layar utama".
+   - iPhone/iPad       : buka di Safari > tombol Bagikan >
+                         "Tambahkan ke Layar Utama".
+   - Laptop Windows/Mac: buka di Chrome atau Edge > ikon pasang di kolom
+                         alamat, atau menu > "Instal KasRapi".
+
+Setelah terpasang, KasRapi punya ikon sendiri, terbuka tanpa bilah browser,
+dan bisa dipakai tanpa internet.
+
+Pembaruan: bila nanti ada versi baru, unggah ulang index.html, sw.js, dan
+manifest.webmanifest ke repository yang sama (timpa file lama). Perangkat
+mengambil versi baru saat online; tutup lalu buka lagi aplikasinya bila
+tampilan belum berubah.
+
+
+CARA 2: BUKA LANGSUNG TANPA HOSTING
+-----------------------------------
+Klik dua kali index.html. Aplikasi jalan di browser dan data tersimpan di
+perangkat itu, tetapi tidak bisa "dipasang" sebagai aplikasi.
+
+
+CARA 3: MASUK GOOGLE PLAY STORE (OPSIONAL)
+------------------------------------------
+Setelah Cara 1 selesai, buka pwabuilder.com, masukkan alamat aplikasi, lalu
+pilih paket Android. Situs itu membuat file paket Play Store dari alamat
+tersebut. Untuk menerbitkan di Play Store dibutuhkan akun Google Play
+Console (ada biaya pendaftaran sekali bayar) dan proses peninjauan Google.
+
+
+PENTING SOAL DATA
+-----------------
+- Data tersimpan di browser perangkat masing-masing, tidak dikirim ke
+  server mana pun. Data di HP dan di laptop terpisah.
+- Unduh cadangan secara berkala: Pengaturan > Unduh cadangan.
+- Memindahkan data (antar-perangkat, atau dari versi KasRapi di Claude):
+  Unduh cadangan di perangkat lama, lalu Pengaturan > Pulihkan dari
+  cadangan di perangkat baru.
+- Menghapus data browser atau mencopot aplikasi bisa ikut menghapus data.
+  Selalu unduh cadangan dulu.
+
+
+ANALISIS AI
+-----------
+Pilih salah satu:
+a) Tanpa biaya tambahan: menu Analisis > "Salin ringkasan untuk Claude",
+   lalu tempel ke percakapan baru di claude.ai.
+b) Langsung di aplikasi: isi kunci API Anthropic di Pengaturan > Aplikasi
+   di perangkat ini. Kunci didapat dari console.anthropic.com, hanya
+   tersimpan di perangkat itu, dan biaya pemakaian ditagih ke akun API
+   pemilik kunci. Jangan mengisi kunci di perangkat yang dipakai bersama,
+   dan jangan menyebarkan aplikasi yang sudah berisi kunci Anda.
